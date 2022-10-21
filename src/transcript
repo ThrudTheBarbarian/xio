@@ -1,0 +1,132 @@
+# Reading pref.tcl
+do setup_xio.do
+# 
+#
+# New libraries
+#
+# if {[file exists work]} {
+# 	vdel -lib work -all
+# }
+# vlib work
+# 
+#
+# Compile the testbench and its dependencies
+#
+# vmap work work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# vlog -sv -work work {defines.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:00 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work defines.sv 
+# End time: 16:51:00 on Oct 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work {xio.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:00 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work xio.sv 
+# -- Compiling module xio
+# 
+# Top level modules:
+# 	xio
+# End time: 16:51:01 on Oct 20,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work {xio_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:01 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work xio_tb.sv 
+# -- Compiling module xio_tb
+# 
+# Top level modules:
+# 	xio_tb
+# End time: 16:51:01 on Oct 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work {xio_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:01 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work xio_tb.sv 
+# -- Compiling module xio_tb
+# 
+# Top level modules:
+# 	xio_tb
+# End time: 16:51:01 on Oct 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work {BusMonitor.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:01 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work BusMonitor.sv 
+# -- Compiling module BusMonitor
+# 
+# Top level modules:
+# 	BusMonitor
+# End time: 16:51:01 on Oct 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work {Aperture.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:01 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work Aperture.sv 
+# -- Compiling module Aperture
+# 
+# Top level modules:
+# 	Aperture
+# End time: 16:51:01 on Oct 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work {priorityEncoder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:01 on Oct 20,2022
+# vlog -reportprogress 300 -sv -work work priorityEncoder.sv 
+# -- Compiling module PriorityEncoder
+# 
+# Top level modules:
+# 	PriorityEncoder
+# End time: 16:51:01 on Oct 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+#
+# Start simulation
+#
+# vsim -t 1ps -L work -voptargs="+acc"  work.xio_tb
+# vsim -t 1ps -L work -voptargs=""+acc"" work.xio_tb 
+# Start time: 16:51:01 on Oct 20,2022
+# Loading sv_std.std
+# Loading work.xio_tb
+# Loading work.xio
+# Loading work.BusMonitor
+# Loading work.PriorityEncoder
+# Loading work.Aperture
+# 
+#
+# Look at everything
+#
+# log -r /*
+# 
+# 
+# This line shows only the variable name instead of the full path and which module it was in
+# config wave -signalnamewidth 1
+# 
+# add wave /xio_tb/clk
+# add wave /xio_tb/a8_clk
+# add wave -color white /xio_tb/a8_rst_n
+# 
+# add wave -height 40 -divider {outputs}
+# add wave -color yellow -radix hex /xio_tb/a8_addr
+# add wave -color {green yellow} /xio_tb/a8_rw
+# add wave -color red -radix hex /xio_tb/a8d_pin
+# 
+# add wave -height 40 -divider {internals}
+# add wave -color blue -radix hex  sim:/xio_tb/dut/aperture_gen[0]/aperture/apCfg
+# add wave -color blue -radix hex  sim:/xio_tb/dut/aperture_gen[0]/aperture/apCfgValid
+# add wave -color green -radix hex sim:/xio_tb/dut/sdramAddr
+# 
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# 
+## part 6: run 
+# run -all
+# ** Note: $stop    : xio_tb.sv(131)
+#    Time: 6138 ns  Iteration: 0  Instance: /xio_tb
+# Break in Module xio_tb at xio_tb.sv line 131
+# 
+# End time: 16:51:12 on Oct 20,2022, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 0
